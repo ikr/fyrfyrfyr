@@ -1,0 +1,18 @@
+{
+    "name": "ikr/fyrfyrfyr",
+    "description": "Basic tools for defining and composing functions",
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Krechetov",
+            "email": "ikr@ikr.su"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files": ["src/F/functions.php"]
+    }
+}
