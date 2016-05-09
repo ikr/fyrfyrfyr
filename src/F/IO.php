@@ -11,11 +11,13 @@ class IO
         $this->f = $f;
     }
 
+    // unsafePerformIO :: a
     public function unsafePerformIO()
     {
         return call_user_func($this->f);
     }
 
+    // of :: a -> IO a
     public static function of(&$x)
     {
         return new self(
