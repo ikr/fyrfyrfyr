@@ -29,7 +29,7 @@ class CurryTest extends PHPUnit_Framework_TestCase
     public function testCurriedBuiltInArrayMap()
     {
         $double = function ($x) { return $x * 2; };
-        $doubleAll = F\curryN(2, 'array_map', [$double]);
+        $doubleAll = F\curry('array_map', [$double]);
 
         $this->assertSame([2, 4, 6], $doubleAll([1, 2, 3]));
     }
