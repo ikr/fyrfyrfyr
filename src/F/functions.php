@@ -44,3 +44,9 @@ function compose(array $fs)
         return $args[0];
     };
 }
+
+// prop :: s -> {s: a} -> Maybe a
+function prop($name, array $valuesByKey)
+{
+    return new Maybe(isset($valuesByKey[$name]) ? $valuesByKey[$name] : null);
+}
