@@ -1,6 +1,7 @@
 <?php
 
 use F\IO;
+use F\Maybe;
 
 class IOTest extends PHPUnit_Framework_TestCase
 {
@@ -32,5 +33,17 @@ class IOTest extends PHPUnit_Framework_TestCase
         $io = IO::of($promiscuous['foo']);
         $promiscuous['foo'] = 'moo';
         $this->assertSame('moo', $io->unsafePerformIO());
+    }
+
+    public function testMap()
+    {
+        $env = ['user' => 'ikr'];
+
+
+        $read = IO::of($env)
+            ->map(F\curry('F\prop', ['user']))
+            ->unsafePerformIO();
+
+        $this->assertEquals(Maybe::of('ikr'), $read);
     }
 }

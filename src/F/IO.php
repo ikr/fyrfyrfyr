@@ -27,4 +27,10 @@ class IO
             }
         );
     }
+
+    // map :: (a -> b) -> IO b
+    public function map($f)
+    {
+        return new self(compose([$f, $this->f]));
+    }
 }
