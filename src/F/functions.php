@@ -53,3 +53,9 @@ function prop($name, array $valuesByKey)
 {
     return new Maybe(isset($valuesByKey[$name]) ? $valuesByKey[$name] : null);
 }
+
+// map :: Functor f => (a -> b) -> f a -> f b
+function map($f, $functor)
+{
+    return method_exists($functor, 'map') ? $functor->map($f) : array_map($f, $functor);
+}
