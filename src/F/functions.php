@@ -4,6 +4,12 @@ namespace F;
 
 function curry($f, array $args)
 {
+    $meta = new \ReflectionFunction($f);
+    return curryN($meta->getNumberOfParameters(), $f, $args);
+}
+
+function curryN($arity, $f, array $args)
+{
     $accumulate = function (array $appliedArgs, $totalArgsCount) use ($f, $args, &$accumulate)
     {
         if (count($appliedArgs) + count($args) >= $totalArgsCount) {
@@ -22,8 +28,7 @@ function curry($f, array $args)
         };
     };
 
-    $meta = new \ReflectionFunction($f);
-    return $accumulate([], $meta->getNumberOfParameters());
+    return $accumulate([], $arity);
 }
 
 function compose(array $fs)
