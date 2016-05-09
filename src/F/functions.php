@@ -25,3 +25,17 @@ function curry($f, array $args)
     $meta = new \ReflectionFunction($f);
     return $accumulate([], $meta->getNumberOfParameters());
 }
+
+function compose(array $fs)
+{
+    return function () use ($fs)
+    {
+        $args = func_get_args();
+
+        foreach (array_reverse($fs) as $f) {
+            $args = [call_user_func_array($f, $args)];
+        }
+
+        return $args[0];
+    };
+}
