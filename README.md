@@ -3,3 +3,7 @@
 # About
 
 Basic tools for defining and composing functions
+
+# Status: WORK IN PROGRESS
+
+Not yet ready for using in production
