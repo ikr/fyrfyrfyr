@@ -4,6 +4,8 @@
 
 Basic tools for defining and composing functions
 
+![fox logo](https://ikr.su/h/img/fyrfyrfyr.png)
+
 # Status: WORK IN PROGRESS
 
 Not yet ready for using in production
