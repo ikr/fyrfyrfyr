@@ -13,6 +13,7 @@
     ],
     "require": {},
     "autoload": {
-        "files": ["src/F/functions.php"]
+        "files": ["src/F/functions.php"],
+        "psr-4": {"F\\": "src/F/"}
     }
 }
