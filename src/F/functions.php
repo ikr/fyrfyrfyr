@@ -6,7 +6,7 @@ namespace F;
 function curry($f, array $args)
 {
     $meta = new \ReflectionFunction($f);
-    return curryN($meta->getNumberOfParameters(), $f, $args);
+    return curryN($meta->getNumberOfRequiredParameters(), $f, $args);
 }
 
 // curryN :: Number -> (* -> a) -> [a, b, ...] -> (* -> a)
