@@ -16,10 +16,10 @@ class IO
         return call_user_func($this->f);
     }
 
-    public static function of($x)
+    public static function of(&$x)
     {
         return new self(
-            function () use ($x)
+            function () use (&$x)
             {
                 return $x;
             }

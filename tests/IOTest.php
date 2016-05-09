@@ -14,6 +14,23 @@ class IOTest extends PHPUnit_Framework_TestCase
 
     public function testOfWrapsAValueIntoAThunk()
     {
-        $this->assertSame(42, IO::of(42)->unsafePerformIO());
+        $x = 42;
+        $this->assertSame(42, IO::of($x)->unsafePerformIO());
+    }
+
+    public function testLinksToTheUnsafeValueByReference()
+    {
+        $promiscuous = 42;
+        $io = IO::of($promiscuous);
+        $promiscuous = 13;
+        $this->assertSame(13, $io->unsafePerformIO());
+    }
+
+    public function testLinksToTheUnsafeMapValueByReference()
+    {
+        $promiscuous = ['foo' => 'bar'];
+        $io = IO::of($promiscuous['foo']);
+        $promiscuous['foo'] = 'moo';
+        $this->assertSame('moo', $io->unsafePerformIO());
     }
 }
