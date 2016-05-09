@@ -2,12 +2,12 @@
 
 namespace F;
 
-function curry($f)
+function curry($f, array $args)
 {
-    $accumulate = function (array $appliedArgs, $totalArgsCount) use ($f, &$accumulate)
+    $accumulate = function (array $appliedArgs, $totalArgsCount) use ($f, $args, &$accumulate)
     {
-        if (count($appliedArgs) >= $totalArgsCount) {
-            return call_user_func_array($f, $appliedArgs);
+        if (count($appliedArgs) + count($args) >= $totalArgsCount) {
+            return call_user_func_array($f, array_merge($args, $appliedArgs));
         }
 
         return function ($x) use (&$accumulate, $appliedArgs, $totalArgsCount)
