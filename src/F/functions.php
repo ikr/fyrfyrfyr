@@ -2,12 +2,14 @@
 
 namespace F;
 
+// curry :: (* -> a) -> [a, b, ...] -> (* -> a)
 function curry($f, array $args)
 {
     $meta = new \ReflectionFunction($f);
     return curryN($meta->getNumberOfParameters(), $f, $args);
 }
 
+// curryN :: Number -> (* -> a) -> [a, b, ...] -> (* -> a)
 function curryN($arity, $f, array $args)
 {
     $accumulate = function (array $appliedArgs, $totalArgsCount) use ($f, $args, &$accumulate)
