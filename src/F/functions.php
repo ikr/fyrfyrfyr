@@ -31,6 +31,7 @@ function curryN($arity, $f, array $args)
     return $accumulate([], $arity);
 }
 
+// compose :: ((y -> z), (x -> y), ..., (o -> p), ((a, b, ..., n) -> o)) -> ((a, b, ..., n) -> z)
 function compose(array $fs)
 {
     return function () use ($fs)
