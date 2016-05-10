@@ -11,7 +11,9 @@
             "email": "ikr@ikr.su"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=5.4.0"
+    },
     "autoload": {
         "files": ["src/F/functions.php"],
         "psr-4": {"F\\": "src/F/"}
