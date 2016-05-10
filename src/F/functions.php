@@ -59,3 +59,6 @@ function map($f, $functor)
 {
     return method_exists($functor, 'map') ? $functor->map($f) : array_map($f, $functor);
 }
+
+// identity :: a -> a
+function identity($x) { return $x; }
