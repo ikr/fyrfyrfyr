@@ -1,6 +1,6 @@
 {
     "name": "ikr/fyrfyrfyr",
-    "description": "Basic tools for defining and composing functions",
+    "description": "Basic tools for composing functions, to write simpler and safer programs",
     "require-dev": {
         "phpunit/phpunit": "^4.8"
     },

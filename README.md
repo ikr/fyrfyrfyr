@@ -2,7 +2,7 @@
 
 # About
 
-Basic tools for defining and composing functions
+Basic tools for composing functions, to write simpler and safer programs
 
 ![fox logo](https://ikr.su/h/img/fyrfyrfyr.png)
 
