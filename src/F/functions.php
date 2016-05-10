@@ -62,3 +62,6 @@ function map($f, $functor)
 
 // identity :: a -> a
 function identity($x) { return $x; }
+
+// inc :: Number -> Number
+function inc($x) { return $x + 1; }
