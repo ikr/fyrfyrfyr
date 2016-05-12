@@ -1,6 +1,6 @@
 <?php
 
-namespace F\C;
+namespace F\C1;
 
 function map($f)
 {

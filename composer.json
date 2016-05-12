@@ -17,7 +17,7 @@
     "autoload": {
         "files": [
             "src/F/functions.php",
-            "src/F/C/functions.php"
+            "src/F/C1/functions.php"
         ],
         "psr-4": {"F\\": "src/F/"}
     }

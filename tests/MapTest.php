@@ -23,6 +23,6 @@ class MapTest extends PHPUnit_Framework_TestCase
 
     public function testHasPrecurriedVersion()
     {
-        $this->assertSame([7, 8], call_user_func(F\C\map('F\inc'), [6, 7]));
+        $this->assertSame([7, 8], call_user_func(F\C1\map('F\inc'), [6, 7]));
     }
 }
