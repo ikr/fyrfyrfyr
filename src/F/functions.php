@@ -3,8 +3,10 @@
 namespace F;
 
 // curry :: (* -> a) -> [a, b, ...] -> (* -> a)
-function curry($f, array $args)
+function curry($f)
 {
+    $args = array_slice(func_get_args(), 1);
+
     $meta = new \ReflectionFunction($f);
     return curryN($meta->getNumberOfRequiredParameters(), $f, $args);
 }
@@ -34,8 +36,10 @@ function curryN($arity, $f, array $args)
 }
 
 // compose :: ((y -> z), (x -> y), ..., (o -> p), ((a, b, ..., n) -> o)) -> ((a, b, ..., n) -> z)
-function compose(array $fs)
+function compose()
 {
+    $fs = func_get_args();
+
     return function () use ($fs)
     {
         $args = func_get_args();
