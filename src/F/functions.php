@@ -84,3 +84,6 @@ function identity($x) { return $x; }
 
 // inc :: Number -> Number
 function inc($x) { return $x + 1; }
+
+// append :: a -> [a] -> [a]
+function append($element, array $list) { return array_merge($list, [$element]); }
