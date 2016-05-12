@@ -2,18 +2,27 @@
 
 namespace F;
 
-// curry :: (* -> a) -> [a, b, ...] -> (* -> a)
+// curry :: (* -> a) -> (* -> a)
 function curry($f)
 {
     $args = array_slice(func_get_args(), 1);
 
     $meta = new \ReflectionFunction($f);
-    return curryN($meta->getNumberOfRequiredParameters(), $f, $args);
+
+    return call_user_func_array(
+        'F\curryN',
+        array_merge(
+            [$meta->getNumberOfRequiredParameters(), $f],
+            $args
+        )
+    );
 }
 
-// curryN :: Number -> (* -> a) -> [a, b, ...] -> (* -> a)
-function curryN($arity, $f, array $args)
+// curryN :: Number -> (* -> a) -> (* -> a)
+function curryN($arity, $f)
 {
+    $args = array_slice(func_get_args(), 2);
+
     $accumulate = function (array $appliedArgs, $totalArgsCount) use ($f, $args, &$accumulate)
     {
         if (count($appliedArgs) + count($args) >= $totalArgsCount) {
