@@ -15,7 +15,10 @@
         "php": ">=5.4.0"
     },
     "autoload": {
-        "files": ["src/F/functions.php"],
+        "files": [
+            "src/F/functions.php",
+            "src/F/C/functions.php"
+        ],
         "psr-4": {"F\\": "src/F/"}
     }
 }

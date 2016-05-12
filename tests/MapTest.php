@@ -20,4 +20,9 @@ class MapTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(Maybe::of('IKR'), F\map('strtoupper', Maybe::of('ikr')));
     }
+
+    public function testHasPrecurriedVersion()
+    {
+        $this->assertSame([7, 8], call_user_func(F\C\map('F\inc'), [6, 7]));
+    }
 }
