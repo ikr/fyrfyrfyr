@@ -67,6 +67,12 @@ function prop($name, array $valuesByKey)
     return new Maybe(isset($valuesByKey[$name]) ? $valuesByKey[$name] : null);
 }
 
+// propOr :: a -> String -> {s: a} -> a
+function propOr($default, $name, array $valuesByKey)
+{
+    return isset($valuesByKey[$name]) ? $valuesByKey[$name] : $default;
+}
+
 // map :: Functor f => (a -> b) -> f a -> f b
 function map($f, $functor)
 {
