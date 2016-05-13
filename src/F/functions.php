@@ -88,6 +88,13 @@ function inc($x) { return $x + 1; }
 // append :: a -> [a] -> [a]
 function append($element, array $list) { return array_merge($list, [$element]); }
 
+// pickAll :: a -> [k] -> {k: v} -> {k: v}
+function pickAll($default, array $keys, array $valuesByKey)
+{
+    $base = array_combine($keys, array_fill(0, count($keys), $default));
+    return array_merge($base, pick($keys, $valuesByKey));
+}
+
 // pick :: [k] -> {k: v} -> {k: v}
 function pick(array $keys, array $valuesByKey)
 {

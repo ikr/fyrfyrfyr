@@ -11,6 +11,9 @@ function propOr($default) { return \F\curry('F\propOr', $default); }
 // append :: a -> [a] -> [a]
 function append($element) { return \F\curry('F\append', $element); }
 
+// pickAll :: a -> [k] -> {k: v} -> {k: v}
+function pickAll($default) { return \F\curry('F\pickAll', $default); }
+
 //pick :: [k] -> {k: v} -> {k: v}
 function pick(array $keys) { return \F\curry('F\pick', $keys); }
 
