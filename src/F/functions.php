@@ -109,3 +109,6 @@ function mergeAll(array $as) { return call_user_func_array('array_merge', $as); 
 
 // merge :: {k: v} -> {k: v} -> {k: v}
 function merge(array $a1, array $a2) { return array_merge($a1, $a2); }
+
+// assoc :: String -> a -> {k: v} -> {k: v}
+function assoc($k, $v, $valuesByKey) { return array_merge($valuesByKey, [$k => $v]); }
