@@ -18,4 +18,12 @@ class PropTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(Maybe::of(null), F\prop('age', ['name' => 'Ax']));
     }
+
+    public function testHasPrecurriedVersion()
+    {
+        $this->assertEquals(
+            Maybe::of('Ax'),
+            call_user_func(F\C1\prop('name'), ['name' => 'Ax', 'age' => 92])
+        );
+    }
 }
