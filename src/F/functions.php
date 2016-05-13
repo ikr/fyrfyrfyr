@@ -87,3 +87,19 @@ function inc($x) { return $x + 1; }
 
 // append :: a -> [a] -> [a]
 function append($element, array $list) { return array_merge($list, [$element]); }
+
+// pick :: [k] -> {k: v} -> {k: v}
+function pick(array $keys, array $valuesByKey)
+{
+    return array_reduce(
+        $keys,
+        function ($memo, $key) use ($valuesByKey)
+        {
+            return array_merge(
+                $memo,
+                isset($valuesByKey[$key]) ? [$key => $valuesByKey[$key]] : []
+            );
+        },
+        []
+    );
+}
