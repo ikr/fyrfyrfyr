@@ -13,3 +13,6 @@ function append($element) { return \F\curry('F\append', $element); }
 
 //pick :: [k] -> {k: v} -> {k: v}
 function pick(array $keys) { return \F\curry('F\pick', $keys); }
+
+// merge :: {k: v} -> {k: v} -> {k: v}
+function merge(array $a) { return \F\curry('F\merge', $a); }
