@@ -127,3 +127,19 @@ function fromPairs(array $pairs)
     $values = array_map(function ($p) { return $p[1]; },  $pairs);
     return array_combine($keys, $values);
 }
+
+// converge :: (x1 → x2 → … → z) → [(a → b → … → x1), (a → b → … → x2), …] → (a → b → … → z)
+function converge($convergingFn, array $branchingFns)
+{
+    return function() use ($convergingFn, $branchingFns)
+    {
+        $args = func_get_args();
+
+        $branches = array_map(
+            function ($fn) use ($args) { return call_user_func_array($fn, $args); },
+            $branchingFns
+        );
+
+        return call_user_func_array($convergingFn, $branches);
+    };
+}
