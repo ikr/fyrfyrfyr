@@ -119,3 +119,11 @@ function merge(array $a1, array $a2) { return array_merge($a1, $a2); }
 
 // assoc :: String -> a -> {k: v} -> {k: v}
 function assoc($k, $v, $valuesByKey) { return array_merge($valuesByKey, [$k => $v]); }
+
+// fromPairs :: [[k, v]] -> {k: v}
+function fromPairs(array $pairs)
+{
+    $keys = array_map(function ($p) { return $p[0]; },  $pairs);
+    $values = array_map(function ($p) { return $p[1]; },  $pairs);
+    return array_combine($keys, $values);
+}
