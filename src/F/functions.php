@@ -103,3 +103,8 @@ function pick(array $keys, array $valuesByKey)
         []
     );
 }
+
+// mergeAll :: [{k: v}] -> {k: v}
+function mergeAll(array $listOfValuesByKey) {
+    return call_user_func_array('array_merge', $listOfValuesByKey);
+}
