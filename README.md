@@ -24,11 +24,11 @@ taste though.
 
 ## Composition
 
-    (f⋅g⋅h)(x) := f(g(f(x)))
+    (f⋅g⋅h)(x) <-> f(g(f(x)))
 
 ## Currying
 
-    f(x, y) -> f(x)(y)
+    f(x, y) <-> f(x)(y)
 
 ## Primary higher order functions
 
