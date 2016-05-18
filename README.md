@@ -24,17 +24,42 @@ taste though.
 
 ## Composition
 
+    (f⋅g⋅h)(x) := f(g(f(x)))
+
 ## Currying
+
+    f(x, y) -> f(x)(y)
 
 ## Primary higher order functions
 
+    map
+    chain
+    converge
+
 ## Associative arrays
+
+    assoc
+    fromPairs
+    merge
+    mergeAll
+    pick
+    pickAll
+    prop
+    propOr
 
 ## Lists
 
+    append
+
 ## Utilities
 
+    identity
+    inc
+
 ## Algebraic structures
+
+    IO
+    Maybe
 
 # Status: WORK IN PROGRESS
 
