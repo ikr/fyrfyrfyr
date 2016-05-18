@@ -19,6 +19,20 @@ do know about [Phamda](https://github.com/mpajunen/phamda) and
 5.6+. Then, I was also not 100% on board with some design choices those 2 make. I'd like to keep
 fyr-fyr-fyr tiny and lean, away from all sorts of cruft and magic.
 
+# API
+
+## Composition
+
+## Currying
+
+## Primary higher order functions
+
+## Lists
+
+## Associative arrays
+
+## Utilities
+
 # Status: WORK IN PROGRESS
 
 Not yet ready for using in production
