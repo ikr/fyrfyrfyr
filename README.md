@@ -27,9 +27,9 @@ fyr-fyr-fyr tiny and lean, away from all sorts of cruft and magic.
 
 ## Primary higher order functions
 
-## Lists
-
 ## Associative arrays
+
+## Lists
 
 ## Utilities
 
