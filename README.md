@@ -24,7 +24,7 @@ taste though.
 
 ## Composition
 
-    (f⋅g⋅h)(x) <-> f(g(f(x)))
+    (f⋅g⋅h)(x) <-> f(g(h(x)))
 
 ## Currying
 
