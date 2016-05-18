@@ -3,7 +3,8 @@
 # About
 
 Basic tools for composing functions, to write simpler and safer programs in PHP 5.4+. Heavily
-inspired by @drboolean's [book](https://drboolean.gitbooks.io/mostly-adequate-guide/content/),
+inspired by [@drboolean](https://twitter.com/drboolean)'s
+[book](https://drboolean.gitbooks.io/mostly-adequate-guide/content/), the
 [Ramda](http://ramdajs.com/) library, and the
 [Fantasy Land](https://github.com/fantasyland/fantasy-land) JS project.
 
