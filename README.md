@@ -17,7 +17,7 @@ functional programming can lead us [Out of the Tar Pit](http://shaffner.us/cs/pa
 do know about [Phamda](https://github.com/mpajunen/phamda) and
 [Pramda](https://github.com/kapolos/pramda); very cool projects, but they both require PHP
 5.6+. Then, I was also not 100% on board with some design choices those 2 make. I'd like to keep
-fyr-fyr-fyr tiny and lean, away from excessive magic.
+fyr-fyr-fyr tiny and lean, away from all sorts of cruft and magic.
 
 # Status: WORK IN PROGRESS
 
