@@ -2,9 +2,21 @@
 
 # About
 
-Basic tools for composing functions, to write simpler and safer programs
+Basic tools for composing functions, to write simpler and safer programs in PHP 5.4+. Heavily
+inspired by @drboolean's [book](https://drboolean.gitbooks.io/mostly-adequate-guide/content/),
+[Ramda](http://ramdajs.com/) library, and the
+[Fantasy Land](https://github.com/fantasyland/fantasy-land) JS project.
 
 ![fox logo](https://ikr.su/h/img/fyrfyrfyr.png)
+
+# Why?
+
+This library grew out of frustration with old PHP code I have to maintain. I'm convinced that
+functional programming can lead us out of the [Tar Pit](http://shaffner.us/cs/papers/tarpit.pdf). I
+do know about [Phamda](https://github.com/mpajunen/phamda) and
+[Pramda](https://github.com/kapolos/pramda); very cool projects, but they both require PHP
+5.6+. Then, I was also not 100% on board with some design choices those 2 make. I'd like to keep
+fyr-fyr-fyr tiny and lean, without excessive magic.
 
 # Status: WORK IN PROGRESS
 
