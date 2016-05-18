@@ -33,6 +33,8 @@ fyr-fyr-fyr tiny and lean, away from all sorts of cruft and magic.
 
 ## Utilities
 
+## Algebraic structures
+
 # Status: WORK IN PROGRESS
 
 Not yet ready for using in production
