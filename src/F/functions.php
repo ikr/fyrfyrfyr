@@ -61,12 +61,6 @@ function compose()
     };
 }
 
-// prop :: s -> {s: a} -> Maybe a
-function prop($name, array $valuesByKey)
-{
-    return new Maybe(isset($valuesByKey[$name]) ? $valuesByKey[$name] : null);
-}
-
 // propOr :: a -> String -> {s: a} -> a
 function propOr($default, $name, array $valuesByKey)
 {

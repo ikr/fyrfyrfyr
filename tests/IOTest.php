@@ -40,11 +40,11 @@ class IOTest extends PHPUnit_Framework_TestCase
         $env = ['user' => 'ikr'];
 
         $io = IO::of($env)
-            ->map(F\curry('F\prop', 'user'))
-            ->map(F\curry('F\map', 'strtoupper'));
+            ->map(F\curry('F\propOr', '', 'user'))
+            ->map('strtoupper');
 
         $env['user'] = 'root';
 
-        $this->assertEquals(Maybe::of('ROOT'), $io->unsafePerformIO());
+        $this->assertSame('ROOT', $io->unsafePerformIO());
     }
 }
