@@ -8,6 +8,9 @@ function map($f) { return \F\curry('F\map', $f); }
 // propOr :: a -> String -> {s: a} -> a
 function propOr($default) { return \F\curry('F\propOr', $default); }
 
+// pathOr :: a -> [String] -> Object -> a
+function pathOr($default) { return \F\curry('F\pathOr', $default); }
+
 // append :: a -> [a] -> [a]
 function append($element) { return \F\curry('F\append', $element); }
 

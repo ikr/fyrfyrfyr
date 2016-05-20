@@ -61,32 +61,38 @@ function compose()
     };
 }
 
-// propOr :: a -> String -> {s: a} -> a
-function propOr($default, $name, array $valuesByKey)
-{
-    return isset($valuesByKey[$name]) ? $valuesByKey[$name] : $default;
-}
-
 // map :: Functor f => (a -> b) -> f a -> f b
 function map($f, $functor)
 {
     return method_exists($functor, 'map') ? $functor->map($f) : array_map($f, $functor);
 }
 
-// identity :: a -> a
-function identity($x) { return $x; }
-
-// inc :: Number -> Number
-function inc($x) { return $x + 1; }
-
-// append :: a -> [a] -> [a]
-function append($element, array $list) { return array_merge($list, [$element]); }
+// propOr :: a -> String -> {s: a} -> a
+function propOr($default, $name, array $valuesByKey)
+{
+    return isset($valuesByKey[$name]) ? $valuesByKey[$name] : $default;
+}
 
 // pickAll :: a -> [k] -> {k: v} -> {k: v}
 function pickAll($default, array $keys, array $valuesByKey)
 {
     $base = array_combine($keys, array_fill(0, count($keys), $default));
     return array_merge($base, pick($keys, $valuesByKey));
+}
+
+// pathOr :: a -> [String] -> Object -> a
+function pathOr($default, array $pathElements, $obj)
+{
+    if (!$pathElements) return $default;
+
+    $pointer = $obj;
+    while ($pathElements) {
+        $key = array_shift($pathElements);
+        if (!isset($pointer[$key])) return $default;
+        $pointer = $pointer[$key];
+    }
+
+    return $pointer;
 }
 
 // pick :: [k] -> {k: v} -> {k: v}
@@ -137,3 +143,12 @@ function converge($convergingFn, array $branchingFns)
         return call_user_func_array($convergingFn, $branches);
     };
 }
+
+// identity :: a -> a
+function identity($x) { return $x; }
+
+// inc :: Number -> Number
+function inc($x) { return $x + 1; }
+
+// append :: a -> [a] -> [a]
+function append($element, array $list) { return array_merge($list, [$element]); }
