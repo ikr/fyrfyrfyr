@@ -22,13 +22,19 @@ taste though.
 
 # API
 
-## Composition
+## Constructing functions
+
+### Composition
 
     (f⋅g⋅h)(x) <-> f(g(h(x)))
 
-## Currying
+### Currying
 
     f(x, y) <-> f(x)(y)
+
+### Flipping the arguments
+
+    flip
 
 ## Primary higher order functions
 

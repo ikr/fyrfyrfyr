@@ -61,6 +61,16 @@ function compose()
     };
 }
 
+// flip :: (a -> b -> c -> … -> z) -> (b -> a -> c -> … -> z)
+function flip($fn)
+{
+    return function ($x, $y) use ($fn)
+    {
+        $rest = array_slice(func_get_args(), 2);
+        return call_user_func_array($fn, array_merge([$y, $x], $rest));
+    };
+}
+
 // map :: Functor f => (a -> b) -> f a -> f b
 function map($f, $functor)
 {
