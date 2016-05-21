@@ -50,9 +50,11 @@ taste though.
 ## Lists
 
     append
+    indexBy
 
 ## Utilities
 
+    always
     identity
     inc
 

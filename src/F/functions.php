@@ -144,6 +144,23 @@ function converge($convergingFn, array $branchingFns)
     };
 }
 
+// indexBy :: (a -> String) -> [{k: v}] -> {k: {k: v}}
+function indexBy($genKey, array $objs)
+{
+    return array_reduce(
+        $objs,
+        function ($memo, $obj) use ($genKey)
+        {
+            $memo[$genKey($obj)] = $obj;
+            return $memo;
+        },
+        []
+    );
+}
+
+// always :: a -> (* -> a)
+function always($x) { return function () use ($x) { return $x; }; }
+
 // identity :: a -> a
 function identity($x) { return $x; }
 

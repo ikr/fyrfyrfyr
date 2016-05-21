@@ -28,3 +28,6 @@ function assoc($k) { return \F\curry('F\assoc', $k); }
 
 // converge :: (x1 → x2 → … → z) → [(a → b → … → x1), (a → b → … → x2), …] → (a → b → … → z)
 function converge($convergingFn) { return \F\curry('F\converge', $convergingFn); }
+
+// indexBy :: (a -> String) -> [{k: v}] -> {k: {k: v}}
+function indexBy($genKey) { return \F\curry('F\indexBy', $genKey); }
