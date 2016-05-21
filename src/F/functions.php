@@ -130,6 +130,28 @@ function merge(array $a1, array $a2) { return array_merge($a1, $a2); }
 // assoc :: String -> a -> {k: v} -> {k: v}
 function assoc($k, $v, $valuesByKey) { return array_merge($valuesByKey, [$k => $v]); }
 
+// assocPath :: [String] -> a -> {k: v} -> {k: v}
+function assocPath(array $pathElements, $value, array $obj)
+{
+    if (!$pathElements) return $obj;
+
+    $result = $obj;
+    $pointer = &$result;
+
+    while (count($pathElements) > 1) {
+        $key = array_shift($pathElements);
+
+        if (!isset($pointer[$key]) || !is_array($pointer[$key])) {
+            $pointer[$key] = [];
+        }
+
+        $pointer = &$pointer[$key];
+    }
+
+    $pointer[$pathElements[0]] = $value;
+    return $result;
+}
+
 // fromPairs :: [[k, v]] -> {k: v}
 function fromPairs(array $pairs)
 {

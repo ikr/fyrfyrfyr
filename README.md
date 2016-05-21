@@ -45,6 +45,7 @@ taste though.
 ## Associative arrays
 
     assoc
+    assocPath
     fromPairs
     merge
     mergeAll

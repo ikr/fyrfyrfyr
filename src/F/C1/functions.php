@@ -26,6 +26,9 @@ function merge(array $a) { return \F\curry('F\merge', $a); }
 // assoc :: String -> a -> {k: v} -> {k: v}
 function assoc($k) { return \F\curry('F\assoc', $k); }
 
+// assocPath :: [String] -> a -> {k: v} -> {k: v}
+function assocPath(array $pathElements) { return \F\curry('F\assocPath', $pathElements); }
+
 // converge :: (x1 → x2 → … → z) → [(a → b → … → x1), (a → b → … → x2), …] → (a → b → … → z)
 function converge($convergingFn) { return \F\curry('F\converge', $convergingFn); }
 

@@ -16,3 +16,8 @@ function pickAll($default, array $keys) { return \F\curry('F\pickAll', $default,
 
 // assoc :: String -> a -> {k: v} -> {k: v}
 function assoc($k, $v) { return \F\curry('F\assoc', $k, $v); }
+
+// assocPath :: [String] -> a -> {k: v} -> {k: v}
+function assocPath(array $pathElements, $value) {
+    return \F\curry('F\assocPath', $pathElements, $value);
+}
