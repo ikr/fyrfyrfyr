@@ -38,4 +38,26 @@ class MaybeTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(new Maybe(null), Maybe::of(Maybe::of(null))->join());
     }
+
+    public function testChain1()
+    {
+        $this->assertEquals(
+            Maybe::of(5),
+
+            Maybe::of(3)->chain(
+                function ($three)
+                {
+                    return Maybe::of(2)->map(F\C1\add($three));
+                }
+            )
+        );
+    }
+
+    public function testChain2()
+    {
+        $this->assertEquals(
+            Maybe::of(null),
+            Maybe::of(null)->chain(F\C1\prop('address'))->chain(F\C1\prop('street'))
+        );
+    }
 }

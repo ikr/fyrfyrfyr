@@ -36,6 +36,12 @@ class Maybe
     // join :: Maybe a
     public function join()
     {
-        return $this->value;
+        return $this->isNothing() ? self::of(null) : $this->value;
+    }
+
+    // chain :: (a -> b) -> Maybe b
+    public function chain($f)
+    {
+        return $this->map($f)->join();
     }
 }
