@@ -34,3 +34,6 @@ function converge($convergingFn) { return \F\curry('F\converge', $convergingFn);
 
 // indexBy :: (a -> String) -> [{k: v}] -> {k: {k: v}}
 function indexBy($genKey) { return \F\curry('F\indexBy', $genKey); }
+
+// add :: Number -> Number -> Number
+function add($x) { return \F\curry('F\add', $x); }

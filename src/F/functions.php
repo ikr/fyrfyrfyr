@@ -199,5 +199,8 @@ function identity($x) { return $x; }
 // inc :: Number -> Number
 function inc($x) { return $x + 1; }
 
+// add :: Number -> Number -> Number
+function add($x, $y) { return $x + $y; }
+
 // append :: a -> [a] -> [a]
 function append($element, array $list) { return array_merge($list, [$element]); }
