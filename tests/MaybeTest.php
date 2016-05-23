@@ -28,4 +28,14 @@ class MaybeTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(new Maybe('HI'), Maybe::of('hi')->map('strtoupper'));
     }
+
+    public function testJoinOnNestedActuallyPresentValue()
+    {
+        $this->assertEquals(new Maybe(42), Maybe::of(Maybe::of(42))->join());
+    }
+
+    public function testJoinOnNestedAbsentValue()
+    {
+        $this->assertEquals(new Maybe(null), Maybe::of(Maybe::of(null))->join());
+    }
 }

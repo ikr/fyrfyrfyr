@@ -26,6 +26,16 @@ class Maybe
     // map :: (a -> b) -> Maybe b
     public function map($f)
     {
-        return $this->isNothing() ? self::of(null) : self::of(call_user_func($f, $this->value));
+        return (
+            $this->isNothing() ?
+            self::of(null) :
+            self::of(call_user_func($f, $this->value))
+        );
+    }
+
+    // join :: Maybe a
+    public function join()
+    {
+        return $this->value;
     }
 }
