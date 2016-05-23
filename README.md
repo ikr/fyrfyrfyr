@@ -61,6 +61,7 @@ taste though.
 
 ## Utilities
 
+    add
     always
     identity
     inc
