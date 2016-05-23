@@ -49,9 +49,9 @@ taste though.
     fromPairs
     merge
     mergeAll
-    pathOr
     pick
     pickAll
+    prop
     propOr
 
 ## Lists
