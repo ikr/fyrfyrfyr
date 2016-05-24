@@ -24,3 +24,6 @@ function assoc($k, $v) { return \F\curry('F\assoc', $k, $v); }
 function assocPath(array $pathElements, $value) {
     return \F\curry('F\assocPath', $pathElements, $value);
 }
+
+// minBy :: Ord b => (a -> b) -> a -> a -> a
+function minBy($fn, $x) { return \F\curry('F\minBy', $fn, $x); }

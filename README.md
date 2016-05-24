@@ -59,6 +59,7 @@ taste though.
 
     append
     indexBy
+    minBy
 
 ## Utilities
 

@@ -43,3 +43,6 @@ function indexBy($genKey) { return \F\curry('F\indexBy', $genKey); }
 
 // add :: Number -> Number -> Number
 function add($x) { return \F\curry('F\add', $x); }
+
+// minBy :: Ord b => (a -> b) -> a -> a -> a
+function minBy($fn) { return \F\curry('F\minBy', $fn); }

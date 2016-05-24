@@ -78,7 +78,17 @@ function map($f, $functor)
 }
 
 // reduce :: ((a, b) -> a) -> a -> [b] -> a
-function reduce($iterFn, $initial, array $xs) { return array_reduce($xs, $iterFn, $initial); }
+function reduce($iterFn, $initial, array $xs) {
+    return array_reduce(
+        $xs,
+        function ($memo, $x) use ($iterFn)
+        {
+            $result = $iterFn($memo, $x);
+            return is_callable($result) ? $result($x) : $result;
+        },
+        $initial
+    );
+}
 
 // prop :: s -> {s: a} -> Maybe a
 function prop($name, array $valuesByKey)
@@ -210,6 +220,9 @@ function inc($x) { return $x + 1; }
 
 // add :: Number -> Number -> Number
 function add($x, $y) { return $x + $y; }
+
+// minBy :: Ord b => (a -> b) -> a -> a -> a
+function minBy($fn, $x, $y) { return $fn($x) < $fn($y) ? $x : $y; }
 
 // append :: a -> [a] -> [a]
 function append($element, array $list) { return array_merge($list, [$element]); }
