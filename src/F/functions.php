@@ -77,6 +77,9 @@ function map($f, $functor)
     return method_exists($functor, 'map') ? $functor->map($f) : array_map($f, $functor);
 }
 
+// reduce :: ((a, b) -> a) -> a -> [b] -> a
+function reduce($iterFn, $initial, array $xs) { return array_reduce($xs, $iterFn, $initial); }
+
 // prop :: s -> {s: a} -> Maybe a
 function prop($name, array $valuesByKey)
 {

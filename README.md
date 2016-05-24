@@ -40,6 +40,7 @@ taste though.
 
     map
     chain
+    reduce
     converge
 
 ## Associative arrays

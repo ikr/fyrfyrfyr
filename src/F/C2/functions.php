@@ -2,6 +2,9 @@
 
 namespace F\C2;
 
+// reduce :: ((a, b) -> a) -> a -> [b] -> a
+function reduce($iterFn, $initial) { return \F\curry('F\reduce', $iterFn, $initial); }
+
 // propOr :: a -> String -> {s: a} -> a
 function propOr($default, $name) { return \F\curry('F\propOr', $default, $name); }
 

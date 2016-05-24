@@ -5,6 +5,9 @@ namespace F\C1;
 // map :: Functor f => (a -> b) -> f a -> f b
 function map($f) { return \F\curry('F\map', $f); }
 
+// reduce :: ((a, b) -> a) -> a -> [b] -> a
+function reduce($iterFn) { return \F\curry('F\reduce', $iterFn); }
+
 // prop :: s -> {s: a} -> Maybe a
 function prop($name) { return \F\curry('F\prop', $name); }
 
