@@ -47,4 +47,10 @@ class IOTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(Maybe::of('ROOT'), $io->unsafePerformIO());
     }
+
+    public function testJoin()
+    {
+        $io = IO::of(new IO(F\always(13)))->join();
+        $this->assertSame(13, $io->unsafePerformIO());
+    }
 }

@@ -33,4 +33,16 @@ class IO
     {
         return new self(compose($f, $this->f));
     }
+
+    // join :: IO a
+    public function join()
+    {
+        $self = $this;
+        return new self(
+            function () use ($self)
+            {
+                return $self->unsafePerformIO()->unsafePerformIO();
+            }
+        );
+    }
 }
