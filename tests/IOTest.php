@@ -53,4 +53,24 @@ class IOTest extends PHPUnit_Framework_TestCase
         $io = IO::of(new IO(F\always(13)))->join();
         $this->assertSame(13, $io->unsafePerformIO());
     }
+
+    public function testChain()
+    {
+        $v = 42;
+
+        $echo = function ($x)
+        {
+            echo $x;
+            return IO::of($x);
+        };
+
+        $io = IO::of($v)->chain($echo);
+
+        ob_start();
+        $ret = $io->unsafePerformIO();
+        $out = ob_get_clean();
+
+        $this->assertSame(42, $ret);
+        $this->assertSame('42', $out);
+    }
 }

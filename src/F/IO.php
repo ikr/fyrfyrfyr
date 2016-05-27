@@ -45,4 +45,10 @@ class IO
             }
         );
     }
+
+    // chain :: (a -> b) -> IO b
+    public function chain($f)
+    {
+        return $this->map($f)->join();
+    }
 }
