@@ -50,7 +50,8 @@ class IOTest extends PHPUnit_Framework_TestCase
 
     public function testJoin()
     {
-        $io = IO::of(new IO(F\always(13)))->join();
+        $always13 = F\always(13);
+        $io = IO::of(new IO($always13))->join();
         $this->assertSame(13, $io->unsafePerformIO());
     }
 
