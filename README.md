@@ -8,7 +8,7 @@ inspired by [@drboolean](https://twitter.com/drboolean)'s
 [Ramda](http://ramdajs.com/) library, and the
 [Fantasy Land](https://github.com/fantasyland/fantasy-land) JS project.
 
-![fox logo](https://ikr.su/h/img/fyrfyrfyr.png)
+![fox logo](http://ikr.su/h/img/fyrfyrfyr.png)
 
 # Why?
 
